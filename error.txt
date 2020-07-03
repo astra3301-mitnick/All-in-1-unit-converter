@@ -1,0 +1,46 @@
+def sensex(event):
+    webbrowser.open_new(r"#")
+def nifty(event):
+    webbrowser.open_new(r"#")
+def gold(event):
+    webbrowser.open_new(r"#")
+def silver(event):
+    webbrowser.open_new(r"#")
+
+
+####################################################################################
+#Hovering
+def color_config(widget, color, event):
+    widget.configure(foreground=color)
+
+text =Label(root, text="SENSEX",font = ("Arial", 14, "bold"))
+
+text.bind("<Enter>", partial(color_config, text, "red"))
+text.bind("<Leave>", partial(color_config, text, "blue"))
+text.pack()
+text.bind("<Button-1>",sensex)
+text.place(x=350,y=120)
+text =Label(root, text="NIFTY",font = ("Arial", 14, "bold"))
+
+text.bind("<Enter>", partial(color_config, text, "red"))
+text.bind("<Leave>", partial(color_config, text, "blue"))
+@ 323
+text.pack()
+text.bind("<Button-1>",nifty)
+text.place(x=350,y=150)
+
+text =Label(root, text="GOLD",font = ("Arial", 14, "bold"))
+
+text.bind("<Enter>", partial(color_config, text, "red"))
+text.bind("<Leave>", partial(color_config, text, "blue"))
+text.pack()
+text.bind("<Button-1>",gold)
+text.place(x=350,y=180)
+
+text =Label(root, text="SILVER",font = ("Arial", 14, "bold"))
+
+text.bind("<Enter>", partial(color_config, text, "red"))
+text.bind("<Leave>", partial(color_config, text, "blue"))
+text.pack()
+text.bind("<Button-1>",silver)
+text.place(x=350,y=210)
